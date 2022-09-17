@@ -5,16 +5,14 @@
 *print_numbers - function that prints all numbers from
 *0 to 9
 *
-*Return: returns nothing
+*Return: 0 - 9, followed by newline
 */
 
 void print_numbers(void)
 {
-	int n;
+	int i;
 
-	for (n = 48; n < 58; n++)
-	}
-		putchar(n);
-	}
-	putchar(10);
+	for (i = 0; i < 9; i++)
+		_putchar(i + '0');
+	_putchar('\n');
 }
