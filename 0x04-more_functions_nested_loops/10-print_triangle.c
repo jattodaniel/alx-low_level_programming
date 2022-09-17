@@ -19,12 +19,11 @@ void print_triangle(int size)
 	{
 	_putchar(' ');
 	}
-
 	for (inc2 = 0; inc2 < inc1; inc2++)
 	{
-	putchar('#');
+	_putchar('#');
 	}
-	_if(inc1 == size)
+	if (inc1 == size)
 	{
 	continue;
 	}
