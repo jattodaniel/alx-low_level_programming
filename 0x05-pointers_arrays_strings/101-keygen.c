@@ -1,52 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
 
 /**
- * main - it generates valud random passwords for the 101-keygen.c program
+ * main - it generates valid random passwords for the 101-keygen.c program
  *
  * Return: always 0
  */
 int main(void)
 {
-	char password[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+	int ascii = 2772, i = 0, j, random;
+	char password[100];
+	time_t t;
 
-	srand(time(0));
-
-	while (sum < 2772)
+	srand((int) time(&t));
+	while (ascii > 126)
 	{
-		password[index] = 33 * rand() % 94;
-		sum += password[index++];
+		random = rand() % 126;
+		password[i] = random;
+		ascii -= random;
+		i++;
+	}
+	if (ascii > 0)
+		password[i] = ascii;
+	else
+	{
+		i--;
 	}
 
-	password[index] = '\0';
-
-	if (sum != 2772)
+	for (j = 0; j <= i; j++)
 	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2772) / 2;
-		if ((sum - 2772) % 2 != 0)
-			diff_half1++;
-
-		for (index = 0; password[index]; index++)
-		{
-			if (password[index] >= (33 + diff_half1))
-			{
-				password[index] -= diff_half1;
-				break;
-			}
-		}
-		for (index = 0; password[index]; index++)
-		{
-			if (password[index] >= (33 + diff_half2))
-			{
-				password[index] -= diff_half2;
-				break;
-			}
-		}
+		printf("%c", password[j]);
 	}
-
-	printf("%s", password);
 	return (0);
 }
