@@ -2,7 +2,7 @@
 
 /**
 * _memset - fill a block of memory
-* @s - starting address
+* @s: starting address
 * @b: value
 * @n: no of bytes
 * Return: Always 0
