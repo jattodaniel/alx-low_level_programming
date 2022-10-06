@@ -2,14 +2,16 @@
 
 /**
  * main - it prints the number of arguments
- * @argc: number of arguments
- * @argv: array of pointers
+ *
+ * @args: this is the argument count
+ * @argv: this is the argument vector
  *
  * Return: always 0
+ *
  */
-int main(int argc, char __attribute__((__unused__)) * argv[])
+int main(int args, char *argv[])
 {
-print("%d\n", argc - 1);
-
-return (0);
+	print("%d\n", args - 1);
+	(void)argv;
+	return (0);
 }
