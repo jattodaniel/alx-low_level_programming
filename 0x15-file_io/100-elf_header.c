@@ -61,7 +61,7 @@ void print_magic(unsigned char *e_ident)
 	{
 		printf("%02x", e_ident[index]);
 
-		if (index == EI_NIDENT -1)
+		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -138,7 +138,7 @@ void print_version(unsigned char *e_ident)
  * print_osabi - prints the OS/ABI of an ELF header
  * @e_ident: a pointer to an array containing the ELF version
  */
- void print_osabi(unsigned char *e_ident)
+void print_osabi(unsigned char *e_ident)
 {
 	printf(" OS/ABI:		");
 
@@ -263,14 +263,14 @@ void close_elf(int elf)
 
 /**
  * main - displays the information contained
- * 	in the ELF header at the start of an ELF file
+ *	in the ELF header at the start of an ELF file
  * @argc: the number of arguments supplied to the program
  * @argv: an array of pointers t the arguments
  *
  * Return: 0 on success
  *
  * Description: if the file is not an ELF file
- * 	or the function fails - exit code 98
+ *	or the function fails - exit code 98
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
